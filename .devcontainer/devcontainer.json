@@ -1,0 +1,25 @@
+{
+  "name": "General Development Container with Neovim",
+  "build": {
+      "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "asvetliakov.vscode-neovim",
+              "agutierrezr.vscode-neovim-pack"
+          ],
+          "settings": {
+              "vscode-neovim.neovimExecutablePath": "/home/codespace/.local/nvim/bin/nvim",
+              "vscode-neovim.neovimInitVimPaths": "/home/codespace/.config/nvim/init.lua",
+              "editor.lineNumbers": "relative",
+              "editor.scrollBeyondLastLine": false,
+              "workbench.list.automaticKeyboardNavigation": false,
+              "editor.cursorStyle": "block",
+              "keyboard.dispatch": "keyCode"
+          }
+      }
+  },
+  "remoteUser": "codespace",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/install.sh"
+}
